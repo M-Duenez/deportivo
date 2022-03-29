@@ -9,10 +9,22 @@ import Club from '../components/Club.vue'
 import RegistroAlumno from '../components/registro/RegistroAlumno.vue'
 import RegistroPago from '../components/registro/RegistroPago.vue'
 
+import Login from '../views/Login.vue'
+import Registro from '../views/Registro.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
- 
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/registro',
+    name: 'Registro',
+    component: Registro
+  },
   {
     path: '/club',
     name: 'Clubs',
@@ -33,14 +45,6 @@ const routes = [
     name: 'RegistroPago',
     component: RegistroPago
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
 ]
 
 const router = new VueRouter({
