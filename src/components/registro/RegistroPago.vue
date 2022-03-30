@@ -1,7 +1,6 @@
 <template>
   <div class="RegistroAlumno">
-<div class="container">
-
+    <br>
     <div class="row">
         <div class="col-md-7">
             <table class="table table-white">
@@ -68,9 +67,6 @@
         </div>
             
     </div>
-
-    
-</div>
   </div>
 </template>
 

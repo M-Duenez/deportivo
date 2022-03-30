@@ -26,7 +26,7 @@ const routes = [
     component: Registro
   },
   {
-    path: '/club',
+    path: '/clubs',
     name: 'Clubs',
     component: Club
   },
@@ -48,6 +48,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
   routes
 })
 

@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <CNavbar></CNavbar>
-    <br>
-    <br>
+    <CNavbar ></CNavbar>
+
     <!--<nav>
       <router-link to="/">Home</router-link> 
       <router-link to="/club">CLUBS</router-link> 
       <router-link to="/about">About</router-link>
     </nav>-->
-    <router-view/>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <router-view/>
+      
+      </div>
+      <div class="col-1"></div>
+    </div>
+    
+    
   </div>
 </template>
 
@@ -41,7 +49,29 @@ import CNavbar from './components/navbar.vue'
     name: 'App',
     components: {
       CNavbar,
-    }
+    },
+    data(){
+      return {
+        navigation: false,
+      }
+    },
+    created(){
+      this.checkRoute();
+    },
+    mothods: {
+      checkRoute(){
+        if ( this.$router.name === "Login") {
+          this.navigation = false;
+          return;
+        }
+        this.navigation = true;
+      }
+    },
+    watch: {
+      $router(){
+        this.checkRoute();
+      }
+    },
   }
 </script>
 

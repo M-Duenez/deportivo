@@ -1,8 +1,7 @@
 <template>
   <div class="RegistroAlumno">
-<div class="container">
+    <br>
 
-    
 
     <div class="row" >
         <div class="col-md-7">
@@ -86,9 +85,6 @@
         </div>
             
     </div>
-
-    
-</div>
   </div>
 </template>
 

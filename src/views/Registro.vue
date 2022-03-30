@@ -19,7 +19,7 @@
 // import { required } from "@vuelidate/validators";
 
 export default {
-  name: 'FRegistro',
+  name: 'VRegistro',
   data() {
     return {
       // v$: useValidate(),

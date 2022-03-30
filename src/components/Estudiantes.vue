@@ -1,13 +1,8 @@
 <template>
 
 	<div>
+		<br>
 		
-		<div class="container">
-			
-			<div class="row">
-				
-				<h1>ESTUDIANTES</h1>
-			</div>
 			<div class="row">
 				
 				<div v-if="validation == true" class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -19,13 +14,16 @@
 			</div>
 			<div class="row">
 				<div class="col-md-8">
-					<table class="table table-dark">
-						<thead>
+					<table class="table table-white "  >
+						<thead  class=" text-white " style="background-color:#06244f;">
 							<tr>
 								<th>No.</th>
 								<th>Nombres</th>
 								<th>Apellidos</th>
+								<th>Edad</th>
 								<th>Grupo</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody v-for='(estuadinte, index) in  Estudiantes' :key="index">
@@ -43,7 +41,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card">
-						<div class="card-header bg-dark text-white">
+						<div class="card-header  text-white"  style="background-color:#06244f;">
 								<h2>Nuevo Estuadinte</h2>
 						</div>
 						<div class="card-body">
@@ -84,7 +82,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 </template>
 

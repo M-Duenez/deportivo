@@ -1,9 +1,6 @@
 <template>
 	<div>
-		<div class="container">
-			<div class="row">
-				<h1>CLUB</h1>
-			</div>
+			<br>
 			<div class="row">
 				<div v-if="validation == true" class="alert alert-warning alert-dismissible fade show" role="alert">
 					<strong>Holy guacamole!</strong> You should check in on some of those fields below.
@@ -14,13 +11,15 @@
 			</div>
 			<div class="row">
 				<div class="col-md-8">
-					<table class="table table-dark">
-						<thead>
+					<table class="table table-white">
+						<thead class=" text-white " style="background-color:#06244f;">
 							<tr>
 								<th>No.</th>
 								<th>Nombres</th>
 								<th>Horario</th>
 								<th>Dias</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody v-for='(club, index) in  clubs' :key="index">
@@ -37,7 +36,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card">
-						<div class="card-header bg-dark text-white">
+						<div class="card-header text-white" style="background-color:#06244f;">
 								<h2>Nuevo Club</h2>
 						</div>
 						<div class="card-body">
@@ -78,7 +77,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 </template>
 
@@ -92,7 +90,7 @@ export default {
 	computed:{
 		...mapState(['clubs'])
 	},
-	data:()=>{
+	data(){
 		return{
 			validation: false,
 			nombre:'',
@@ -100,7 +98,7 @@ export default {
 			dias:'',
 			btn_a: true,
 			btn_e: false,
-		}
+		};
 	},
 	methods:{
 		validaciones(nombre, horario, dias){

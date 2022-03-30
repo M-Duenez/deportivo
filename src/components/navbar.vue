@@ -10,23 +10,23 @@
                 <ul class="navbar-nav mr-auto">
                    
                     <li class="nav-item">
-                        <a class="nav-link"><router-link to="/club">CLUBS</router-link> </a>
+                        <a class="nav-link"><router-link :to="{name: 'Clubs'}">CLUBS</router-link> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link to="/estudiantes">ESTUDIANTES</router-link> </a>
+                        <a class="nav-link"><router-link :to="{name: 'Estudaintes'}">ESTUDIANTES</router-link> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link to="/registro_alumno">REGISTRAR ALUMNO</router-link> </a>
+                        <a class="nav-link"><router-link :to="{name: 'RegistroAlumno'}">REGISTRAR ALUMNO</router-link> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link to="/registro_pago">REGISTRAR PAGO</router-link> </a>
+                        <a class="nav-link"><router-link :to="{name: 'RegistroPago'}">REGISTRAR PAGO</router-link> </a>
                     </li>
                 </ul>
                 
             </div>
 
             <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success bg-success text-light my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+                <button class="btn btn-success my-2 my-sm-0" type="submit"><router-link class="link" :to="{name: 'Login'}">Cerrar Sesión</router-link> </button>
             </form>
 
         </nav>
