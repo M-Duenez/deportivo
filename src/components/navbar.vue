@@ -16,17 +16,17 @@
                         <a class="nav-link"><router-link :to="{name: 'Estudaintes'}">DOCENTES</router-link> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link :to="{name: 'RegistroAlumno'}">REGISTRAR ALUMNO</router-link> </a>
+                        <a class="nav-link"><router-link :to="{name: 'RegistroAlumno'}">ALUMNOS</router-link> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link :to="{name: 'RegistroPago'}">REGISTRAR PAGO</router-link> </a>
+                        <a class="nav-link"><router-link :to="{name: 'RegistroPago'}">PAGOS</router-link> </a>
                     </li>
                 </ul>
                 
             </div>
 
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-success my-2 my-sm-0" type="submit"><router-link class="link" :to="{name: 'Login'}"></router-link>  <i class="bi bi-box-arrow-in-right"></i></button>
+                <button class="btn btn-success my-2 my-sm-0" type="submit"><router-link class="link" :to="{name: 'Login'}"> LOGOUT <i class="bi bi-box-arrow-in-right"></i></router-link>  </button>
             </form>
 
         </nav>

@@ -3,8 +3,8 @@
 			<br>
 			<div class="row">
 				<div v-if="validation == true" class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong>Holy guacamole!</strong> You should check in on some of those fields below.
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<strong>Advertencia!!!</strong> No Puede haber campos ni espacions vacios.
+					<button type="button" @click="dissmis()" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
@@ -70,7 +70,7 @@
 							<button v-if="btn_a == true"  @click="validaciones(nombre, horario, dias)" class="btn btn-success btn-block">
 								AGREGAR
 							</button>
-							<button v-if="btn_e == true" @click="clicEditar(index,nombre, horario, dias)" class="btn btn-success btn-block">
+							<button v-if="btn_e == true" @click="clicEditar(index,nombre, horario, dias)" class="btn btn-primary btn-block">
 								EDITAR
 							</button>
 						</div>
@@ -162,6 +162,9 @@ export default {
             //console.log(index);
             this.clubs.splice(index, 1);
 
+        },
+		dissmis(){
+            this.validation = false;
         },
     }
 	

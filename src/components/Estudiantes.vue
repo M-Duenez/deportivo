@@ -7,7 +7,7 @@
 				
 				<div v-if="validation == true" class="alert alert-warning alert-dismissible fade show" role="alert">
 					<strong>Advertencia!!!</strong> No Puede haber campos ni espacions vacios.
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<button type="button" @click="dissmis()" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
@@ -48,7 +48,7 @@
 							<form id="createStudent" >
 								<div class="form-group">
 									<label for="formGroupExampleInput">Nombre Completo</label>
-									<input type="text" v-model="nombre"  class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre Club" autofocus>
+									<input type="text" v-model="nombre"  class="form-control" name="nombre" id="nombre" placeholder="Ingresar Nombre" autofocus>
 								</div>
 								<div class="form-group">
 									<label for="formGroupExampleInput2">Apellidos</label>
@@ -75,7 +75,7 @@
 							<button v-if="btn_a == true" @click="validaciones(nombre, apellidos, edad, grupo)" class="btn btn-success btn-block">
 								AGREGAR
 							</button>
-							<button v-if="btn_e == true" @click="clicEditar(index,nombre, apellidos, edad, grupo)" class="btn btn-success btn-block">
+							<button v-if="btn_e == true" @click="clicEditar(index,nombre, apellidos, edad, grupo)" class="btn btn-primary btn-block">
 								EDITAR
 							</button>
 						</div>
@@ -170,6 +170,9 @@ export default {
             console.log(index);
             this.Estudiantes.splice(index, 1);
 
+        },
+		dissmis(){
+            this.validation = false;
         },
     }
 	

@@ -1,7 +1,14 @@
 <template>
   <div class="RegistroAlumno">
     <br>
-
+    <div class="row">		
+		<div v-if="validation == true" class="alert alert-warning alert-dismissible fade show" role="alert">
+			<strong>Advertencia!!!</strong> No Puede haber campos ni espacions vacios.
+			<button type="button" @click="dissmis()" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</div>
 
     <div class="row" >
         <div class="col-md-8">
@@ -28,7 +35,7 @@
                         <th>{{estuadinte.diciplinac}}</th>
                         <th>{{estuadinte.horarioc}}</th>
                         <th>{{estuadinte.correoc}}</th>
-                        <th><button class="btn btn-primary btn-md" @click="editarEstudiante(index, estuadinte.nombrec, estuadinte.apellidosc, estuadinte.edadc, estuadinte.diciplinac)" > <span class="fas fa-duotone fa-pen"></span> </button></th>
+                        <th><button class="btn btn-primary btn-md" @click="editarEstudiante(index, estuadinte.nombrec, estuadinte.apellidosc, estuadinte.edadc, estuadinte.diciplinac, estuadinte.horarioc, estuadinte.correoc)" > <span class="fas fa-duotone fa-pen"></span> </button></th>
                         <th><button class="btn btn-danger btn-md" @click="Eliminar(index)" > <span class="fas fa-trash"></span>  </button></th>
                     </tr>
                 </tbody>
@@ -38,28 +45,34 @@
         <div class="col-4 float-righ">
             <div class="card">
                 <div class="card-header  text-light" style="background-color:#06244f;">
-                    <label class="text-light">Registro de Alumnos</label>
+                    <label class="text-light">Registro de Alumno</label>
                 </div>
                 <div class="card-body">
                     <form>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Nombre Completo:</label>
-                                <input type="text" class="form-control" placeholder="Nombre Completo..">
+                                <label for="inputEmail4">Nombres:</label>
+                                <input v-model="nombre" type="text" class="form-control" placeholder="Nombres..">
                             </div>
                             <div class="form-group col-md-6">
+                                <label for="inputEmail4">Apellidos:</label>
+                                <input v-model="apellidos" type="text" class="form-control" placeholder="Apellidos..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
                                 <label for="inputEmail4">Fecha de nacimiento:</label>
-                                <input type="date" class="form-control" placeholder="Fecha de Nacimiento..">
+                                <input v-model="fechan" type="date" class="form-control" placeholder="Fecha de Nacimiento..">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Edad:</label>
-                                <input type="text" class="form-control" placeholder="Edad..">
+                                <input v-model="edad" type="text" class="form-control" placeholder="Edad..">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Elegir Disciplina:</label>
-                                <select id="inputState" class="form-control">
+                                <select v-model="diciplina" id="inputState" class="form-control">
                                     <option selected>Elegir Disciplina...</option>
                                     <option>Futbol</option>
                                     <option>Natación</option>
@@ -71,20 +84,24 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Horario:</label>
-                                <input type="time" class="form-control" placeholder="Horario..">
+                                <input v-model="horario" type="time" class="form-control" placeholder="Horario..">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Correo:</label>
-                                <input type="text" class="form-control" placeholder="Correo..">
+                                <input v-model="correo" type="email" class="form-control" placeholder="Correo..">
                             </div>
                         </div>
                         
                         <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <button class="btn btn-success" type="submit">Guardar</button>
-                            </div>
+                           
                         </div>
                     </form>
+                    <button v-if="btn_a == true" @click="validaciones(nombre, apellidos, edad, grupo)" class="btn btn-success btn-block">
+						AGREGAR
+					</button>
+					<button v-if="btn_e == true" @click="clicEditar(index,nombre, apellidos, edad, grupo)" class="btn btn-primary btn-block">
+						EDITAR
+					</button>
                 </div>
             </div>
         </div>
@@ -111,6 +128,8 @@
                 apellidos:'',
                 edad: '',
                 diciplina:'',
+                horario: '',
+                correo: '',
                 btn_a: true,
                 btn_e: false,
             }
@@ -181,6 +200,9 @@
                 console.log(index);
                 this.Estudiantes.splice(index, 1);
 
+            },
+            dissmis(){
+                this.validation = false;
             },
         },
         props: {
