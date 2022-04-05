@@ -33,8 +33,8 @@
 								<th>{{estuadinte.apellidosc}}</th>
 								<th>{{estuadinte.edadc}}</th>
 								<th>{{estuadinte.grupoc}}</th>
-								<th><button class="btn btn-primary btn-md" @click="editarEstudiante(index, estuadinte.nombrec, estuadinte.apellidosc, estuadinte.edadc, estuadinte.grupoc)" >EDITAR</button></th>
-								<th><button class="btn btn-danger btn-md" @click="Eliminar(index)" >ELIMINAR</button></th>
+								<th><button class="btn btn-primary btn-md" @click="editarEstudiante(index, estuadinte.nombrec, estuadinte.apellidosc, estuadinte.edadc, estuadinte.grupoc)" > <span class="fas fa-duotone fa-pen"></span> </button></th>
+								<th><button class="btn btn-danger btn-md" @click="Eliminar(index)" > <span class="fas fa-duotone fa-trash"></span>  </button></th>
 							</tr>
 						</tbody>
 					</table>
@@ -42,7 +42,7 @@
 				<div class="col-md-4">
 					<div class="card">
 						<div class="card-header  text-white"  style="background-color:#06244f;">
-								<h2>Nuevo Estuadinte</h2>
+								<h2>Registro</h2>
 						</div>
 						<div class="card-body">
 							<form id="createStudent" >

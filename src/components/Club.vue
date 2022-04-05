@@ -28,8 +28,8 @@
 								<th>{{club.nombrec}}</th>
 								<th>{{club.horarioc}}</th>
 								<th>{{club.diasc}}</th>
-								<th><button class="btn btn-primary btn-md" @click="editarclub(index, club.nombrec, club.horarioc, club.diasc)" >EDITAR</button></th>
-								<th><button class="btn btn-danger btn-md" @click="eliminar(index)" >ELIMINAR</button></th>
+								<th><button class="btn btn-primary btn-md" @click="editarclub(index, club.nombrec, club.horarioc, club.diasc)" > <span class="fas fa-duotone fa-pen"></span> </button></th>
+								<th><button class="btn btn-danger btn-md" @click="eliminar(index)" > <span class="fas fa-duotone fa-trash"></span> </button></th>
 							</tr>
 						</tbody>
 					</table>

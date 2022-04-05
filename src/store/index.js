@@ -11,12 +11,12 @@ export default new Vuex.Store({
       {nombrec:'Natacion', horarioc:'08:00 - 19:00', diasc:'lunes a viernes'},
     ],
     Estudiantes: [
-      {nombrec:'Juan', apellidosc:'Perez', edadc:'20', grupoc:'Futbol'},
-      {nombrec:'Jose', apellidosc:'Dueñez', edadc:'20', grupoc:'Futbol'},
-      {nombrec:'Miguel', apellidosc:'Palomo', edadc:'20', grupoc:'BasquetBal'},
-      {nombrec:'Juan', apellidosc:'Perez', edadc:'20', grupoc:'BasquetBal'},
-      {nombrec:'Jose', apellidosc:'Dueñez', edadc:'20', grupoc:'Natacion'},
-      {nombrec:'Miguel', apellidosc:'Palomo', edadc:'20', grupoc:'Natacion'},
+      {nombrec:'Juan', apellidosc:'Perez', edadc:'20', fechanc: '20/11/1996', diciplinac:'Futbol', horarisoc:'Futbol', correoc: "@"},
+      {nombrec:'Jose', apellidosc:'Dueñez', edadc:'20', fechanc: '20/11/1996', diciplinac:'Futbol', horarioc:'Futbol', correoc: "@"},
+      {nombrec:'Miguel', apellidosc:'Palomo', edadc:'20', fechanc: '20/11/1996', diciplinac:'BasquetBal', horarioc:'Futbol', correoc: "@"},
+      {nombrec:'Juan', apellidosc:'Perez', edadc:'20', fechanc: '20/11/1996', diciplinac:'BasquetBal', horarioc:'Futbol', correoc: "@"},
+      {nombrec:'Jose', apellidosc:'Dueñez', edadc:'20', fechanc: '20/11/1996', diciplinac:'Natacion', horarioc:'Futbol', correoc: "@"},
+      {nombrec:'Miguel', apellidosc:'Palomo', edadc:'20', fechanc: '20/11/1996', diciplinac:'Natacion', horarioc:'Futbol', correoc: "@"},
     ],
   },
   getters: {
